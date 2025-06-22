@@ -44280,7 +44280,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sea Todo
+  m_Text: WeedCalendar
 --- !u!222 &1259218220
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -54707,7 +54707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.32941177, g: 0.5803922, b: 0.7882353, a: 1}
+  m_Color: {r: 0.3744006, g: 0.7882353, b: 0.32941177, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
