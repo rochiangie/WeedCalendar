@@ -13,6 +13,8 @@ public class CultivoManager : MonoBehaviour
 
     void Start()
     {
+        //DesactivarUIVieja();
+
         CargarPlantas();
         if (plantas.Count == 0)
         {
@@ -22,7 +24,20 @@ public class CultivoManager : MonoBehaviour
 
         MostrarTarjetas();
     }
-
+    /*void DesactivarUIVieja()
+    {
+        GameObject canvas = GameObject.Find("Canvas");
+        if (canvas != null)
+        {
+            foreach (Transform hijo in canvas.transform)
+            {
+                if (!hijo.name.Contains("TarjetaPlanta") && !hijo.name.Contains("ContenedorTarjetas"))
+                {
+                    hijo.gameObject.SetActive(false); // Apagamos todo lo que no es nuestro
+                }
+            }
+        }
+    }*/
 
     void CrearPlantasDePrueba()
     {

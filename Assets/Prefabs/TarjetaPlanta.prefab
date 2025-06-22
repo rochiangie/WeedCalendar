@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 4542512066870090810}
   - component: {fileID: 5807273992886579559}
   - component: {fileID: 8376656559150320339}
+  - component: {fileID: 4469755158681098727}
   m_Layer: 5
   m_Name: TarjetaPlanta
   m_TagString: Untagged
@@ -224,3 +225,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nombrePlantaTexto: {fileID: 2332961950084469399}
+--- !u!114 &4469755158681098727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5802666092891961857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 700
+  m_PreferredHeight: 120
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
