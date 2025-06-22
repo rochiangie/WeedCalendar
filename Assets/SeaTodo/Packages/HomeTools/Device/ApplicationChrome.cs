@@ -1,6 +1,7 @@
 ﻿#if UNITY_ANDROID && !UNITY_EDITOR
 #define USE_ANDROID
 #endif
+using System;
 
 using UnityEngine;
 
