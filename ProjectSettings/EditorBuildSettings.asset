@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/SeaTodo/Scenes/#Empty.unity
     guid: b217fd7c244511b40b4f70335ece3f7d
   - enabled: 1
-    path: Assets/SeaTodo/Scenes/#Base.unity
+    path: Assets/Scenes/#Base.unity
     guid: f40c6fff741bbec4db28cb0fb6f8468c
   m_configObjects: {}

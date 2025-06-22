@@ -2,12 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using TMPro;
 
 public class CultivoManager : MonoBehaviour
 {
     public List<PlantaData> plantas = new List<PlantaData>();
-    public GameObject tarjetaPlantaPrefab;
-    public Transform contenedorTarjetas;
+    //public GameObject tarjetaPlantaPrefab;
+    //public Transform contenedorTarjetas;
+    //public GameObject togglePlantaPrefab;
+    public Transform contenedorToggles;
+    public TMP_Dropdown dropdownPlantas;
 
     private string rutaArchivo => Path.Combine(Application.persistentDataPath, "plantas.json");
 
@@ -22,7 +26,7 @@ public class CultivoManager : MonoBehaviour
             GuardarPlantas();
         }
 
-        MostrarTarjetas();
+        MostrarDropdown();
     }
     /*void DesactivarUIVieja()
     {
@@ -55,13 +59,29 @@ public class CultivoManager : MonoBehaviour
         Debug.Log("Guardado en: " + rutaArchivo);
     }
 
-    void MostrarTarjetas()
+    void MostrarDropdown()
     {
+        dropdownPlantas.ClearOptions();
+
+        List<string> nombres = new List<string>();
         foreach (PlantaData planta in plantas)
         {
-            GameObject tarjetaGO = Instantiate(tarjetaPlantaPrefab, contenedorTarjetas);
-            TarjetaPlanta tarjetaScript = tarjetaGO.GetComponent<TarjetaPlanta>();
-            tarjetaScript.Inicializar(planta);
+            nombres.Add(planta.nombre);
+        }
+
+        dropdownPlantas.AddOptions(nombres);
+
+        // Opcional: mostrar detalles de la primera al iniciar
+        MostrarDetallePlanta(0);
+    }
+
+    public void MostrarDetallePlanta(int index)
+    {
+        if (index >= 0 && index < plantas.Count)
+        {
+            PlantaData seleccionada = plantas[index];
+            Debug.Log($"Planta seleccionada: {seleccionada.nombre}");
+            // Acá podrías mostrarla en pantalla, activar panel, etc.
         }
     }
 
