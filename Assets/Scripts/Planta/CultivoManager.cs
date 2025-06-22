@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CultivoManager : MonoBehaviour
 {
@@ -42,6 +43,15 @@ public class CultivoManager : MonoBehaviour
         Debug.Log("✅ Plantas guardadas en: " + rutaArchivo);
     }
 
+    public void CargarPlantaSeleccionada()
+    {
+        int index = dropdownPlantas.value;
+        if (index >= 0 && index < plantas.Count)
+        {
+            DatosPlantaSeleccionada.instancia.EstablecerPlanta(plantas[index]);
+            SceneManager.LoadScene("MenuOpciones"); // Asegurate de que el nombre coincida exacto
+        }
+    }
     public void CargarPlantas()
     {
         if (File.Exists(rutaArchivo))
