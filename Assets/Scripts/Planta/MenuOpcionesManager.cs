@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,11 +10,14 @@ public class MenuOpcionesManager : MonoBehaviour
     public TextMeshProUGUI fechaSiembraText;
     public TextMeshProUGUI notasLogText;
     public TMP_InputField inputNota;
+    public TMP_Dropdown dropdownPlantas;
 
     private PlantaData planta;
 
     void Start()
     {
+        dropdownPlantas.onValueChanged.AddListener(LogSeleccion);
+
         if (DatosPlantaSeleccionada.instancia?.plantaSeleccionada == null)
         {
             Debug.LogWarning("⚠️ No hay planta seleccionada.");
@@ -23,7 +27,17 @@ public class MenuOpcionesManager : MonoBehaviour
         planta = DatosPlantaSeleccionada.instancia.plantaSeleccionada;
         ActualizarUI();
     }
-
+    void LogSeleccion(int index)
+    {
+        if (dropdownPlantas.options.Count > index)
+        {
+            Debug.Log("Seleccionado: " + dropdownPlantas.options[index].text);
+        }
+        else
+        {
+            Debug.Log("Índice inválido en dropdown: " + index);
+        }
+    }
     void ActualizarUI()
     {
         if (nombrePlantaText != null)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿// CultivoManager.cs
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -16,16 +17,35 @@ public class CultivoManager : MonoBehaviour
 
     void Start()
     {
-        CargarPlantas();
-
+        // CargarPlantas(); // sigue comentado
+        dropdownPlantas.ClearOptions();
         if (plantas.Count == 0)
         {
+            Debug.Log("🌱 Lista vacía, se crean plantas de prueba");
             CrearPlantasDePrueba();
             GuardarPlantas();
         }
 
         MostrarDropdown();
     }
+
+    public void RefrescarDropdown()
+    {
+        Debug.Log("🔄 Refrescando dropdown... Plantas en memoria: " + plantas.Count);
+
+        dropdownPlantas.ClearOptions();
+
+        List<string> nombres = new List<string>();
+        foreach (PlantaData planta in plantas)
+            nombres.Add(planta.nombre);
+
+        dropdownPlantas.AddOptions(nombres);
+
+        dropdownPlantas.value = -1;
+        dropdownPlantas.captionText.text = "Seleccionar...";
+        dropdownPlantas.RefreshShownValue();
+    }
+
 
     void CrearPlantasDePrueba()
     {
@@ -49,9 +69,10 @@ public class CultivoManager : MonoBehaviour
         if (index >= 0 && index < plantas.Count)
         {
             DatosPlantaSeleccionada.instancia.EstablecerPlanta(plantas[index]);
-            SceneManager.LoadScene("MenuOpciones"); // Asegurate de que el nombre coincida exacto
+            SceneManager.LoadScene("MenuOpciones");
         }
     }
+
     public void CargarPlantas()
     {
         if (File.Exists(rutaArchivo))
@@ -77,11 +98,18 @@ public class CultivoManager : MonoBehaviour
         }
 
         dropdownPlantas.AddOptions(nombres);
+
+        Debug.Log($"Dropdown cargado con {nombres.Count} opciones");
+
         dropdownPlantas.onValueChanged.RemoveAllListeners();
         dropdownPlantas.onValueChanged.AddListener(MostrarDetallePlanta);
 
-        MostrarDetallePlanta(0); // Mostrar la primera al iniciar
+        if (nombres.Count > 0)
+            MostrarDetallePlanta(0); // opcional
     }
+
+
+
 
     public void MostrarDetallePlanta(int index)
     {
@@ -89,18 +117,14 @@ public class CultivoManager : MonoBehaviour
         {
             PlantaData seleccionada = plantas[index];
             Debug.Log($"🌱 Planta seleccionada: {seleccionada.nombre} — Siembra: {seleccionada.fechaSiembra}");
-            // A futuro: actualizar panel con detalles
         }
     }
 
     public void AgregarNuevaPlanta()
     {
-        Debug.Log("🧪 BOTÓN FUNCIONA");
-
-        PlantaData nueva = new PlantaData("Prueba Botón", DateTime.Now, DateTime.Now.AddDays(50));
+        PlantaData nueva = new PlantaData("Nueva Planta", DateTime.Now, DateTime.Now.AddDays(60));
         plantas.Add(nueva);
         GuardarPlantas();
         MostrarDropdown();
     }
-
 }

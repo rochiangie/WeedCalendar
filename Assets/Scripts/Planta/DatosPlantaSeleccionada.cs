@@ -1,3 +1,4 @@
+// DatosPlantaSeleccionada.cs
 using UnityEngine;
 
 public class DatosPlantaSeleccionada : MonoBehaviour
