@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -7,19 +7,16 @@ using TMPro;
 public class CultivoManager : MonoBehaviour
 {
     public List<PlantaData> plantas = new List<PlantaData>();
-    //public GameObject tarjetaPlantaPrefab;
-    //public Transform contenedorTarjetas;
-    //public GameObject togglePlantaPrefab;
-    public Transform contenedorToggles;
+
+    [Header("UI")]
     public TMP_Dropdown dropdownPlantas;
 
     private string rutaArchivo => Path.Combine(Application.persistentDataPath, "plantas.json");
 
     void Start()
     {
-        //DesactivarUIVieja();
-
         CargarPlantas();
+
         if (plantas.Count == 0)
         {
             CrearPlantasDePrueba();
@@ -28,20 +25,6 @@ public class CultivoManager : MonoBehaviour
 
         MostrarDropdown();
     }
-    /*void DesactivarUIVieja()
-    {
-        GameObject canvas = GameObject.Find("Canvas");
-        if (canvas != null)
-        {
-            foreach (Transform hijo in canvas.transform)
-            {
-                if (!hijo.name.Contains("TarjetaPlanta") && !hijo.name.Contains("ContenedorTarjetas"))
-                {
-                    hijo.gameObject.SetActive(false); // Apagamos todo lo que no es nuestro
-                }
-            }
-        }
-    }*/
 
     void CrearPlantasDePrueba()
     {
@@ -56,7 +39,21 @@ public class CultivoManager : MonoBehaviour
     {
         string json = JsonUtility.ToJson(new ListaPlantas(plantas));
         File.WriteAllText(rutaArchivo, json);
-        Debug.Log("Guardado en: " + rutaArchivo);
+        Debug.Log("✅ Plantas guardadas en: " + rutaArchivo);
+    }
+
+    public void CargarPlantas()
+    {
+        if (File.Exists(rutaArchivo))
+        {
+            string json = File.ReadAllText(rutaArchivo);
+            plantas = JsonUtility.FromJson<ListaPlantas>(json).plantas;
+            Debug.Log("✅ Plantas cargadas desde: " + rutaArchivo);
+        }
+        else
+        {
+            Debug.Log("No se encontró archivo de plantas. Se crearán nuevas.");
+        }
     }
 
     void MostrarDropdown()
@@ -70,9 +67,10 @@ public class CultivoManager : MonoBehaviour
         }
 
         dropdownPlantas.AddOptions(nombres);
+        dropdownPlantas.onValueChanged.RemoveAllListeners();
+        dropdownPlantas.onValueChanged.AddListener(MostrarDetallePlanta);
 
-        // Opcional: mostrar detalles de la primera al iniciar
-        MostrarDetallePlanta(0);
+        MostrarDetallePlanta(0); // Mostrar la primera al iniciar
     }
 
     public void MostrarDetallePlanta(int index)
@@ -80,22 +78,19 @@ public class CultivoManager : MonoBehaviour
         if (index >= 0 && index < plantas.Count)
         {
             PlantaData seleccionada = plantas[index];
-            Debug.Log($"Planta seleccionada: {seleccionada.nombre}");
-            // Ac� podr�as mostrarla en pantalla, activar panel, etc.
+            Debug.Log($"🌱 Planta seleccionada: {seleccionada.nombre} — Siembra: {seleccionada.fechaSiembra}");
+            // A futuro: actualizar panel con detalles
         }
     }
 
-    public void CargarPlantas()
+    public void AgregarNuevaPlanta()
     {
-        if (File.Exists(rutaArchivo))
-        {
-            string json = File.ReadAllText(rutaArchivo);
-            plantas = JsonUtility.FromJson<ListaPlantas>(json).plantas;
-            Debug.Log("Cargado desde: " + rutaArchivo);
-        }
-        else
-        {
-            Debug.Log("No se encontr� archivo, se va a crear uno nuevo.");
-        }
+        Debug.Log("🧪 BOTÓN FUNCIONA");
+
+        PlantaData nueva = new PlantaData("Prueba Botón", DateTime.Now, DateTime.Now.AddDays(50));
+        plantas.Add(nueva);
+        GuardarPlantas();
+        MostrarDropdown();
     }
+
 }
