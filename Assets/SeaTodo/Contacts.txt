@@ -1,0 +1,25 @@
+Hi!
+
+Thank you for downloading the Asset!
+
+
+My name is Andrew.
+You can always contact me for help or collaboration.
+My experience includes working in Unity, writing code in C#, creating mobile interfaces, particle
+systems, basic animation in Unity, sound processing, image processing (vector and raster),
+working with server requests, and much more.
+
+Tools and directions, I use in my work:
+• Unity
+• C#
+• Adobe Illustrator
+• Adobe Audition
+• Adobe Photoshop
+• Lunacy (UX/UI)
+• Google Play Console
+• App Store Connect
+
+
+Contacts:
+Upwork: https://www.upwork.com/freelancers/~014feeec050fe93daa
+Email: andrew.olenk@gmail.com
