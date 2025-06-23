@@ -16,12 +16,17 @@ public class CultivoManager : MonoBehaviour
 
     void Start()
     {
-        // Cargar datos
-        CargarPlantas();
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        Debug.Log("🧹 PlayerPrefs eliminados");
 
-        // Mostrar lista
+        CargarPlantas();
         MostrarDropdown();
     }
+
+
+
+
 
     void CargarPlantas()
     {
@@ -79,8 +84,9 @@ public class CultivoManager : MonoBehaviour
         PlantaData nueva = new PlantaData("Nueva Planta", DateTime.Now, DateTime.Now.AddDays(60));
         plantas.Add(nueva);
         GuardarPlantas();
-        MostrarDropdown();
+        RefrescarDropdown();
     }
+
 
     public void CargarPlantaSeleccionada()
     {
@@ -129,17 +135,31 @@ public class CultivoManager : MonoBehaviour
         dropdownPlantas.ClearOptions();
 
         List<string> nombres = new List<string>();
-        foreach (var planta in plantas)
+        foreach (PlantaData planta in plantas)
             nombres.Add(planta.nombre);
 
         dropdownPlantas.AddOptions(nombres);
 
-        dropdownPlantas.value = -1;
-        dropdownPlantas.captionText.text = "Seleccionar...";
-        dropdownPlantas.RefreshShownValue();
+        Debug.Log($"🌿 Dropdown actualizado con {nombres.Count} plantas");
 
-        Debug.Log("🔁 Dropdown actualizado tras eliminación");
+        dropdownPlantas.onValueChanged.RemoveAllListeners();
+        dropdownPlantas.onValueChanged.AddListener(MostrarDetallePlanta);
+
+        if (nombres.Count > 0)
+        {
+            dropdownPlantas.value = 0;
+            dropdownPlantas.captionText.text = nombres[0];
+            MostrarDetallePlanta(0);  // ✅ muestra detalles iniciales
+        }
+        else
+        {
+            dropdownPlantas.captionText.text = "Seleccionar...";
+        }
+
+        dropdownPlantas.RefreshShownValue();
     }
+
+
 
 
     void GuardarPlantas()

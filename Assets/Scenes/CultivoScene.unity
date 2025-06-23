@@ -272,7 +272,6 @@ MonoBehaviour:
     estadoActual: PreFlora
     eventos: []
   dropdownPlantas: {fileID: 860889344}
-  panelConfirmacion: {fileID: 1517336853}
 --- !u!4 &446322076
 Transform:
   m_ObjectHideFlags: 0
@@ -2210,7 +2209,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 446322075}
         m_TargetAssemblyTypeName: CultivoManager, Assembly-CSharp
-        m_MethodName: MostrarPanelConfirmacion
+        m_MethodName: EliminarPlantaSeleccionada
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
