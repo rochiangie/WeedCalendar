@@ -235,11 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ece9544e04a4454295b73cc61a28ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropdownPlantas: {fileID: 860889344}
-  inputNombreNueva: {fileID: 0}
-  inputNuevaPlanta: {fileID: 639764122}
-  btnConfirmarNueva: {fileID: 1564082295}
-  textoDetallePlanta: {fileID: 0}
+  dropdown: {fileID: 0}
+  archivoJSON: plantas.json
 --- !u!4 &446322076
 Transform:
   m_ObjectHideFlags: 0
@@ -690,7 +687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &639764123
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1385,7 +1382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &855211704
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2720,7 +2717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1564082296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3270,12 +3267,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantaSeleccionada:
     nombre: 
-    fechaSiembra: 
-    fechaCosechaEstimada: 
+    tipo: 
+    thc: 
+    cbd: 
+    genetica: 
+    ciclo_luz: 
+    cultivo: 
+    altura: 
+    estado: 
+    siembra: 
+    cosecha_estimada: 
+    cosecha_real: 
+    problemas_cosecha: 
     notas: []
-    rutasFotos: []
-    estadoActual: 
-    eventos: []
 --- !u!4 &2114108323
 Transform:
   m_ObjectHideFlags: 0
