@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/CultivoScene.unity
+    guid: e7ba3c29b33f38144a14d355c80d388e
+  - enabled: 1
+    path: Assets/Scenes/MenuOpciones.unity
+    guid: ff711c6ebf1d85248853b9e376d018cd
+  - enabled: 1
     path: Assets/SeaTodo/Scenes/#Empty.unity
     guid: b217fd7c244511b40b4f70335ece3f7d
   - enabled: 1
     path: Assets/Scenes/#Base.unity
     guid: f40c6fff741bbec4db28cb0fb6f8468c
+  - enabled: 0
+    path: Assets/CultivoScene.unity
+    guid: b5e2bba4b918a3646907434a31eb3312
   m_configObjects: {}

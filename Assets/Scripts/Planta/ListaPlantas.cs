@@ -4,10 +4,10 @@ using System.Collections.Generic;
 [Serializable]
 public class ListaPlantas
 {
-    public List<PlantaData> plantas;
+    public List<Planta> plantas;
 
-    public ListaPlantas(List<PlantaData> lista)
+    public ListaPlantas(List<Planta> plantas)
     {
-        plantas = lista;
+        this.plantas = plantas;
     }
 }

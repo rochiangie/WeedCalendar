@@ -1,101 +1,62 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using System.IO;
+using Newtonsoft.Json;
 public class CultivoManager : MonoBehaviour
 {
-    public List<PlantaData> plantas = new List<PlantaData>();
-    //public GameObject tarjetaPlantaPrefab;
-    //public Transform contenedorTarjetas;
-    //public GameObject togglePlantaPrefab;
-    public Transform contenedorToggles;
-    public TMP_Dropdown dropdownPlantas;
-
-    private string rutaArchivo => Path.Combine(Application.persistentDataPath, "plantas.json");
+    public TMP_Dropdown dropdown;
+    public string archivoJSON = "plantas.json"; // En StreamingAssets
+    private Dictionary<string, PlantaData> plantasDict;
 
     void Start()
     {
-        //DesactivarUIVieja();
-
-        CargarPlantas();
-        if (plantas.Count == 0)
-        {
-            CrearPlantasDePrueba();
-            GuardarPlantas();
-        }
-
-        MostrarDropdown();
+        CargarPlantasDesdeJSON();
+        ActualizarDropdown();
     }
-    /*void DesactivarUIVieja()
+
+    void CargarPlantasDesdeJSON()
     {
-        GameObject canvas = GameObject.Find("Canvas");
-        if (canvas != null)
+        try
         {
-            foreach (Transform hijo in canvas.transform)
+            string path = Path.Combine(Application.streamingAssetsPath, archivoJSON);
+            if (!File.Exists(path))
             {
-                if (!hijo.name.Contains("TarjetaPlanta") && !hijo.name.Contains("ContenedorTarjetas"))
-                {
-                    hijo.gameObject.SetActive(false); // Apagamos todo lo que no es nuestro
-                }
+                Debug.LogError("No se encontró el archivo JSON en: " + path);
+                return;
             }
+
+            string json = File.ReadAllText(path);
+
+            plantasDict = JsonConvert.DeserializeObject<Dictionary<string, PlantaData>>(json);
+
+            if (plantasDict == null)
+            {
+                Debug.LogError("❌ Error al deserializar el JSON, el diccionario es null.");
+                return;
+            }
+
+            Debug.Log("✅ Plantas cargadas correctamente: " + plantasDict.Count);
         }
-    }*/
-
-    void CrearPlantasDePrueba()
-    {
-        plantas.Add(new PlantaData("Sour Diesel", DateTime.Now, DateTime.Now.AddDays(70)));
-        plantas.Add(new PlantaData("OG Kush", DateTime.Now.AddDays(-3), DateTime.Now.AddDays(65)));
-        plantas.Add(new PlantaData("Medusa", DateTime.Now.AddDays(-7), DateTime.Now.AddDays(60)));
-        plantas.Add(new PlantaData("Gorilla", DateTime.Now.AddDays(-10), DateTime.Now.AddDays(55)));
-        plantas.Add(new PlantaData("Girl Scout Cookies", DateTime.Now.AddDays(-1), DateTime.Now.AddDays(80)));
-    }
-
-    public void GuardarPlantas()
-    {
-        string json = JsonUtility.ToJson(new ListaPlantas(plantas));
-        File.WriteAllText(rutaArchivo, json);
-        Debug.Log("Guardado en: " + rutaArchivo);
-    }
-
-    void MostrarDropdown()
-    {
-        dropdownPlantas.ClearOptions();
-
-        List<string> nombres = new List<string>();
-        foreach (PlantaData planta in plantas)
+        catch (System.Exception ex)
         {
-            nombres.Add(planta.nombre);
-        }
-
-        dropdownPlantas.AddOptions(nombres);
-
-        // Opcional: mostrar detalles de la primera al iniciar
-        MostrarDetallePlanta(0);
-    }
-
-    public void MostrarDetallePlanta(int index)
-    {
-        if (index >= 0 && index < plantas.Count)
-        {
-            PlantaData seleccionada = plantas[index];
-            Debug.Log($"Planta seleccionada: {seleccionada.nombre}");
-            // Ac� podr�as mostrarla en pantalla, activar panel, etc.
+            Debug.LogError("🔥 Error al cargar plantas: " + ex.Message);
         }
     }
 
-    public void CargarPlantas()
+    void ActualizarDropdown()
     {
-        if (File.Exists(rutaArchivo))
+        dropdown.ClearOptions();
+        dropdown.AddOptions(new List<string>(plantasDict.Keys));
+    }
+
+    public void SeleccionarPlanta(int index)
+    {
+        string seleccionada = dropdown.options[index].text;
+        if (plantasDict.TryGetValue(seleccionada, out PlantaData planta))
         {
-            string json = File.ReadAllText(rutaArchivo);
-            plantas = JsonUtility.FromJson<ListaPlantas>(json).plantas;
-            Debug.Log("Cargado desde: " + rutaArchivo);
-        }
-        else
-        {
-            Debug.Log("No se encontr� archivo, se va a crear uno nuevo.");
+            Debug.Log("Planta seleccionada: " + planta.nombre);
+            // Aquí podés actualizar la UI con sus datos
         }
     }
 }
