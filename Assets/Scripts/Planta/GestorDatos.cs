@@ -38,11 +38,11 @@ public static class GestorDatos
 
             var plantasPorDefecto = new List<Planta>
         {
-            new Planta { nombre = "Gorilla", siembra = "16/05/2025", notas = new List<Nota>() },
-            new Planta { nombre = "Sour Diesel", siembra = "17/05/2025", notas = new List<Nota>() },
-            new Planta { nombre = "Girl Scout", siembra = "18/05/2025", notas = new List<Nota>() },
-            new Planta { nombre = "OG Kush", siembra = "19/05/2025", notas = new List<Nota>() },
-            new Planta { nombre = "Medusa", siembra = "20/05/2025", notas = new List<Nota>() }
+            new Planta { nombre = "Gorilla", fechaSiembra = "16/05/2025", notas = new List<string>() },
+            new Planta { nombre = "Sour Diesel", fechaSiembra = "17/05/2025", notas = new List<string>() },
+            new Planta { nombre = "Girl Scout", fechaSiembra = "18/05/2025", notas = new List<string>() },
+            new Planta { nombre = "OG Kush", fechaSiembra = "19/05/2025", notas = new List<string>() },
+            new Planta { nombre = "Medusa", fechaSiembra = "20/05/2025", notas = new List<string>() }
         };
 
             GuardarPlantas(plantasPorDefecto);

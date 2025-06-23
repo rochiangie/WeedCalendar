@@ -82,10 +82,11 @@ public class UISelector : MonoBehaviour
         Planta nueva = new Planta
         {
             nombre = nuevoNombre,
-            estado = "En crecimiento",
-            siembra = System.DateTime.Now.ToString("dd/MM/yyyy"),
-            notas = new List<Nota>()
+            estadoActual = "En crecimiento",
+            fechaSiembra = System.DateTime.Now.ToString("dd/MM/yyyy"),
+            notas = new List<string>()
         };
+
 
         plantas.Add(nueva);
         GestorDatos.GuardarPlantas(plantas);

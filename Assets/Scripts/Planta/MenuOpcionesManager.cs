@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
@@ -44,7 +45,7 @@ public class MenuOpcionesManager : MonoBehaviour
             nombrePlantaText.text = planta.nombre;
 
         if (fechaSiembraText != null)
-            fechaSiembraText.text = planta.fechaSiembra;
+            fechaSiembraText.text = planta.siembra;
 
         ActualizarNotasLog();
     }
@@ -62,11 +63,18 @@ public class MenuOpcionesManager : MonoBehaviour
         string nuevaNota = inputNota.text.Trim();
         if (!string.IsNullOrEmpty(nuevaNota))
         {
-            planta.notas.Add(nuevaNota);
+            planta.notas.Add(new Nota
+            {
+                fecha = DateTime.Now.ToString("dd/MM/yyyy"),
+                nota = nuevaNota,
+                color = "" // o algún color por defecto
+            });
+
             inputNota.text = "";
             ActualizarNotasLog();
         }
     }
+
 
     public void EliminarPlanta()
     {

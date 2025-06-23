@@ -6,46 +6,25 @@ using UnityEngine;
 public class PlantaData
 {
     public string nombre;
-    public string fechaSiembra;
-    public string fechaCosechaEstimada;
-    public List<string> notas = new List<string>();
-    public List<string> rutasFotos = new List<string>();
-    public string estadoActual;
-    public List<EventoCalendario> eventos = new List<EventoCalendario>();
-
-    public PlantaData(string nombre, DateTime siembra, DateTime cosechaEstimada)
-    {
-        this.nombre = nombre;
-        this.fechaSiembra = siembra.ToString("yyyy-MM-dd");
-        this.fechaCosechaEstimada = cosechaEstimada.ToString("yyyy-MM-dd");
-        this.estadoActual = "Reciente";
-    }
-
-    public void AgregarNota(string nota)
-    {
-        notas.Add($"[{DateTime.Now:yyyy-MM-dd}] {nota}");
-    }
-
-    public void AgregarFoto(string ruta)
-    {
-        rutasFotos.Add(ruta);
-    }
-
-    public void AgregarEvento(string titulo, DateTime fecha)
-    {
-        eventos.Add(new EventoCalendario(titulo, fecha));
-    }
+    public string tipo;
+    public string thc;
+    public string cbd;
+    public string genetica;
+    public string ciclo_luz;
+    public string cultivo;
+    public string altura;
+    public string estado;
+    public string siembra;
+    public string cosecha_estimada;
+    public string cosecha_real;
+    public string problemas_cosecha;
+    public List<Nota> notas = new List<Nota>();
 }
 
 [Serializable]
-public class EventoCalendario
+public class Nota
 {
-    public string titulo;
     public string fecha;
-
-    public EventoCalendario(string titulo, DateTime fecha)
-    {
-        this.titulo = titulo;
-        this.fecha = fecha.ToString("yyyy-MM-dd");
-    }
+    public string nota;
+    public string color;
 }

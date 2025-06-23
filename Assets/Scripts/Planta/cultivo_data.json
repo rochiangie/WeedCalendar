@@ -1,0 +1,413 @@
+{
+    "Gorilla Glue": {
+        "notas": [
+            {
+                "fecha": "11/05/2025",
+                "nota": "sembramos",
+                "color": "#804000"
+            },
+            {
+                "fecha": "16/05/2025",
+                "nota": "Plantulas"
+            },
+            {
+                "fecha": "31/05/2025",
+                "nota": "Namaste vege"
+            },
+            {
+                "fecha": "28/05/2025",
+                "nota": "mantra vege"
+            },
+            {
+                "fecha": "01/06/2025",
+                "nota": "Sin problemas",
+                "color": "#37f807"
+            },
+            {
+                "fecha": "04/06/2025",
+                "nota": "Algunas manchas en las hojas, le puse Namasté Vege 8 ml en un litro, potente",
+                "color": "#4ffb04"
+            },
+            {
+                "fecha": "05/06/2025",
+                "nota": "le cortamos un par de las hojas de abajo",
+                "color": "yellow"
+            },
+            {
+                "fecha": "03/06/2025",
+                "nota": "Le subimos la luz, agregamos ventilador",
+                "color": "yellow"
+            },
+            {
+                "fecha": "06/06/2025",
+                "nota": "foto",
+                "color": "#55f906"
+            },
+            {
+                "fecha": "08/06/2025",
+                "nota": "Namaste 8mla",
+                "color": "#05fa0c"
+            },
+            {
+                "fecha": "12/06/2025",
+                "nota": "lavado de raices, con casi 30 litros\nrelleno de tierra por aplastamiento de la que tenía",
+                "color": "#8080ff"
+            },
+            {
+                "fecha": "19/06/2025",
+                "nota": "1/2 auto flora",
+                "color": "yellow"
+            },
+            {
+                "fecha": "21/06/2025",
+                "nota": "Melasa 2ml en 1 litro",
+                "color": "yellow"
+            },
+            {
+                "fecha": "20/06/2025",
+                "nota": "sacamos algunas hojas",
+                "color": "#12ed2e"
+            }
+        ],
+        "nombre": "Gorilla Glue",
+        "tipo": "Sativa 40",
+        "thc": "21",
+        "siembra": "11/05/2025",
+        "cosecha_estimada": "25/7/2025",
+        "cosecha_real": "",
+        "problemas_cosecha": "",
+        "cbd": "",
+        "genetica": "BSF",
+        "ciclo_luz": "20/4",
+        "cultivo": "indoor",
+        "altura": "",
+        "estado": ""
+    },
+    "OG Kush": {
+        "notas": [
+            {
+                "fecha": "11/05/2025",
+                "nota": "Siembra",
+                "color": "#0af527"
+            },
+            {
+                "fecha": "31/05/2025",
+                "nota": "Namaste vege"
+            },
+            {
+                "fecha": "28/05/2025",
+                "nota": "mantra vege"
+            },
+            {
+                "fecha": "01/06/2025",
+                "nota": "Sin problemas",
+                "color": "#13f807"
+            },
+            {
+                "fecha": "04/06/2025",
+                "nota": "Se aleja la luz porq hay manchas en las hojas\nSe aplica Namste 8ml en 1lit",
+                "color": "#00ff00"
+            },
+            {
+                "fecha": "05/06/2025",
+                "nota": "le cortamos un par de las hojas de abajo",
+                "color": "yellow"
+            },
+            {
+                "fecha": "06/06/2025",
+                "nota": "Foto",
+                "color": "#0ef11f"
+            },
+            {
+                "fecha": "03/06/2025",
+                "nota": "agregamos ventilador",
+                "color": "yellow"
+            },
+            {
+                "fecha": "08/06/2025",
+                "nota": "Namaste 8mla",
+                "color": "#2ff30c"
+            },
+            {
+                "fecha": "12/06/2025",
+                "nota": "lriego con 2 litros de agua",
+                "color": "yellow"
+            },
+            {
+                "fecha": "13/06/2025",
+                "nota": "Lavado de raices",
+                "color": "#0000ff"
+            },
+            {
+                "fecha": "19/06/2025",
+                "nota": "1/2 auto flora",
+                "color": "yellow"
+            },
+            {
+                "fecha": "21/06/2025",
+                "nota": "Melasa 2ml en 1 litro",
+                "color": "yellow"
+            },
+            {
+                "fecha": "20/06/2025",
+                "nota": "le sacamos algunas hojas",
+                "color": "#07f813"
+            }
+        ],
+        "nombre": "OG Kush",
+        "tipo": "Sativa 30",
+        "thc": "18",
+        "siembra": "11/05/2025",
+        "cosecha_estimada": "25/7/2025",
+        "cosecha_real": "",
+        "problemas_cosecha": "",
+        "cbd": "",
+        "genetica": "BSF",
+        "ciclo_luz": "20-4",
+        "cultivo": "indoor",
+        "altura": "",
+        "estado": "plantin"
+    },
+    "Girl Scout Cookies": {
+        "notas": [
+            {
+                "fecha": "11/05/2025",
+                "nota": "siembra"
+            },
+            {
+                "fecha": "31/05/2025",
+                "nota": "Namaste vege"
+            },
+            {
+                "fecha": "28/05/2025",
+                "nota": "mantra vege"
+            },
+            {
+                "fecha": "01/06/2025",
+                "nota": "Hojas medio feas",
+                "color": "#f10edb"
+            },
+            {
+                "fecha": "04/06/2025",
+                "nota": "No salieron nuevas hojas dobladas, solo las que ya estaban, se aleja la luz porq manchas en las hojas\nSe aplica Namste 8ml en 1lit",
+                "color": "#0af53f"
+            },
+            {
+                "fecha": "06/06/2025",
+                "nota": "Foto",
+                "color": "#2bf10e"
+            },
+            {
+                "fecha": "05/06/2025",
+                "nota": "se cortan hojas de abajo y se agrega ventilador",
+                "color": "yellow"
+            },
+            {
+                "fecha": "08/06/2025",
+                "nota": "Namaste 8mla",
+                "color": "#31f00f"
+            },
+            {
+                "fecha": "12/06/2025",
+                "nota": "lriego con 2 litros de agua",
+                "color": "yellow"
+            },
+            {
+                "fecha": "13/06/2025",
+                "nota": "lavado de raices",
+                "color": "#330af5"
+            },
+            {
+                "fecha": "19/06/2025",
+                "nota": "1/2 auto flora",
+                "color": "yellow"
+            },
+            {
+                "fecha": "21/06/2025",
+                "nota": "Melasa 2ml en 1 litro",
+                "color": "yellow"
+            },
+            {
+                "fecha": "20/06/2025",
+                "nota": "le sacamos algunas hojas",
+                "color": "#18e73d"
+            }
+        ],
+        "nombre": "Girl Scout Cookies",
+        "tipo": "Saativa 40",
+        "thc": "18",
+        "siembra": "11/05/2025",
+        "cosecha_estimada": "25/7/2025",
+        "cosecha_real": "",
+        "problemas_cosecha": "",
+        "cbd": "",
+        "genetica": "BSF",
+        "ciclo_luz": "20-4",
+        "cultivo": "indoor",
+        "altura": "",
+        "estado": "Vege"
+    },
+    "Sour Diesel": {
+        "nombre": "Sour Diesel",
+        "tipo": "Saativa 80",
+        "thc": "22",
+        "siembra": "11/05/2025",
+        "cosecha_estimada": "20/7/2025",
+        "cosecha_real": "",
+        "problemas_cosecha": "",
+        "notas": [
+            {
+                "fecha": "16/05/2025",
+                "nota": "Plantulas"
+            },
+            {
+                "fecha": "31/05/2025",
+                "nota": "Namaste vege"
+            },
+            {
+                "fecha": "28/05/2025",
+                "nota": "mantra vege"
+            },
+            {
+                "fecha": "26/05/2025",
+                "nota": "Hoja un poco amarilla",
+                "color": "#f00f0f"
+            },
+            {
+                "fecha": "01/06/2025",
+                "nota": "Sin problemas",
+                "color": "#0af515"
+            },
+            {
+                "fecha": "11/05/2025",
+                "nota": "Siembra",
+                "color": "#804000"
+            },
+            {
+                "fecha": "04/06/2025",
+                "nota": "Algunas manchas en las hojas, le puse Namasté Vege 8 ml en un litro, potente",
+                "color": "#00ff00"
+            },
+            {
+                "fecha": "05/06/2025",
+                "nota": "le cortamos algunas hojas de abajo",
+                "color": "yellow"
+            },
+            {
+                "fecha": "06/06/2025",
+                "nota": "Foto",
+                "color": "#27f50a"
+            },
+            {
+                "fecha": "03/06/2025",
+                "nota": "se aleja luz se agrega ventilador",
+                "color": "yellow"
+            },
+            {
+                "fecha": "08/06/2025",
+                "nota": "Namaste 8mla",
+                "color": "#11f30c"
+            },
+            {
+                "fecha": "12/06/2025",
+                "nota": "lavado de raices, con casi 20 litros\nrelleno de tierra por aplastamiento de la que tenía\nHay prestar atención a que largue toda el agua",
+                "color": "#0749f8"
+            },
+            {
+                "fecha": "19/06/2025",
+                "nota": "1/2 autoflora",
+                "color": "yellow"
+            },
+            {
+                "fecha": "21/06/2025",
+                "nota": "Melasa 2ml en 1 litro",
+                "color": "yellow"
+            },
+            {
+                "fecha": "20/06/2025",
+                "nota": "le cortamos algunas hojas",
+                "color": "#68f30c"
+            }
+        ],
+        "cbd": "",
+        "genetica": "BSF",
+        "ciclo_luz": "20-4",
+        "cultivo": "indoor",
+        "altura": "",
+        "estado": "Plantin"
+    },
+    "Medusa": {
+        "nombre": "Medusa",
+        "tipo": "Sativa",
+        "thc": "18",
+        "cbd": "",
+        "genetica": "Troyan",
+        "ciclo_luz": "20-4",
+        "cultivo": "interior",
+        "altura": "1.30",
+        "estado": "Plantin",
+        "siembra": "13/05/2025",
+        "cosecha_estimada": "",
+        "cosecha_real": "",
+        "problemas_cosecha": "Parece que no crece normalmente",
+        "notas": [
+            {
+                "fecha": "16/05/2025",
+                "nota": "Test"
+            },
+            {
+                "fecha": "12/05/2025",
+                "nota": "Sembramos",
+                "color": "#804000"
+            },
+            {
+                "fecha": "31/05/2025",
+                "nota": "Namaste vege"
+            },
+            {
+                "fecha": "28/05/2025",
+                "nota": "mantra vege"
+            },
+            {
+                "fecha": "01/06/2025",
+                "nota": "Hojas feas, crecimiento lento, medio pafo",
+                "color": "#fa0592"
+            },
+            {
+                "fecha": "04/06/2025",
+                "nota": "Sigue pequeña pero avanza, le puse Namaste en medio litro",
+                "color": "#51f40b"
+            },
+            {
+                "fecha": "05/06/2025",
+                "nota": "Se aleja la luz, se agrega ventilador",
+                "color": "yellow"
+            },
+            {
+                "fecha": "08/06/2025",
+                "nota": "Namaste 8mla",
+                "color": "#40f30c"
+            },
+            {
+                "fecha": "12/06/2025",
+                "nota": "lriego con 2 litros de agua",
+                "color": "yellow"
+            },
+            {
+                "fecha": "19/06/2025",
+                "nota": "1/2 auto flora",
+                "color": "yellow"
+            },
+            {
+                "fecha": "21/06/2025",
+                "nota": "Melasa 1/4",
+                "color": "yellow"
+            },
+            {
+                "fecha": "20/06/2025",
+                "nota": "Le sacamos pocas hojas",
+                "color": "#39f40b"
+            }
+        ]
+    }
+}

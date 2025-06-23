@@ -5,25 +5,9 @@ using System.Collections.Generic;
 public class Planta
 {
     public string nombre;
-    public string tipo;
-    public string thc;
-    public string cbd;
-    public string genetica;
-    public string ciclo_luz;
-    public string cultivo;
-    public string altura;
-    public string estado;
-    public string siembra;
-    public string cosecha_estimada;
-    public string cosecha_real;
-    public string problemas_cosecha;
-    public List<Nota> notas = new List<Nota>();
-}
-
-[Serializable]
-public class Nota
-{
-    public string fecha;
-    public string nota;
-    public string color;
+    public string fechaSiembra;
+    public string estadoActual;
+    public List<string> notas = new List<string>();
+    public List<string> rutasFotos = new List<string>();
+    public List<string> eventos = new List<string>();
 }
