@@ -16,10 +16,6 @@ public class CultivoManager : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
-        Debug.Log("🧹 PlayerPrefs eliminados");
-
         CargarPlantas();
         MostrarDropdown();
     }
@@ -70,13 +66,28 @@ public class CultivoManager : MonoBehaviour
             MostrarDetallePlanta(0);
     }
 
+    public GameObject notasLog; // Asignalo desde el Inspector
+
     public void MostrarDetallePlanta(int index)
     {
         if (index >= 0 && index < plantas.Count)
         {
             PlantaData seleccionada = plantas[index];
-            Debug.Log($"🌱 Planta seleccionada: {seleccionada.nombre} — Siembra: {seleccionada.fechaSiembra}");
+            Debug.Log($"🌱 Planta seleccionada: {seleccionada.nombre}");
+
+            // ✅ Activar o desactivar el log de notas según haya notas
+            if (seleccionada.notas != null && seleccionada.notas.Count > 0)
+                notasLog.SetActive(true);
+            else
+                notasLog.SetActive(false);
         }
+    }
+
+    public void ActualizarListaPlantas()
+    {
+        CargarPlantas();     // vuelve a cargar desde el JSON
+        MostrarDropdown();   // actualiza visualmente el dropdown
+        Debug.Log("🔁 Lista de plantas actualizada manualmente");
     }
 
     public void AgregarNuevaPlanta()
