@@ -289,6 +289,8 @@ MonoBehaviour:
   fechaSiembraText: {fileID: 220137036}
   notasLogText: {fileID: 911126263}
   inputNota: {fileID: 1875969497}
+  dropdownPlantas: {fileID: 1870957016577562994, guid: 182584650734f654c800e6e9f9c85157,
+    type: 3}
 --- !u!4 &113087382
 Transform:
   m_ObjectHideFlags: 0

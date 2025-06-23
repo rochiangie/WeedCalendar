@@ -21,16 +21,36 @@ public static class GestorDatos
         Debug.Log($"📁 Datos guardados en: {RutaArchivo}");
     }
 
+    public static void BorrarPlantas()
+    {
+        if (File.Exists(RutaArchivo))
+        {
+            File.Delete(RutaArchivo);
+            Debug.Log("🗑️ Archivo de plantas eliminado correctamente.");
+        }
+    }
+
     public static List<Planta> CargarPlantas()
     {
         if (!File.Exists(RutaArchivo))
         {
-            Debug.Log("⚠️ No existe archivo de datos. Se crea uno nuevo vacío.");
-            GuardarPlantas(new List<Planta>());
+            Debug.Log("⚠️ No existe archivo de datos. Se crean plantas por defecto.");
+
+            var plantasPorDefecto = new List<Planta>
+        {
+            new Planta { nombre = "Gorilla", siembra = "16/05/2025", notas = new List<Nota>() },
+            new Planta { nombre = "Sour Diesel", siembra = "17/05/2025", notas = new List<Nota>() },
+            new Planta { nombre = "Girl Scout", siembra = "18/05/2025", notas = new List<Nota>() },
+            new Planta { nombre = "OG Kush", siembra = "19/05/2025", notas = new List<Nota>() },
+            new Planta { nombre = "Medusa", siembra = "20/05/2025", notas = new List<Nota>() }
+        };
+
+            GuardarPlantas(plantasPorDefecto);
         }
 
         string json = File.ReadAllText(RutaArchivo);
         ContenedorPlantas contenedor = JsonUtility.FromJson<ContenedorPlantas>(json);
         return contenedor.plantas;
     }
+
 }

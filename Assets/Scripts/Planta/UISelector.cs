@@ -32,30 +32,27 @@ public class UISelector : MonoBehaviour
         btnCargarPlanta.onClick.AddListener(CargarPlantaSeleccionada);
     }
 
-    void ActualizarDropdown()
+    public void ActualizarDropdown()
     {
+        if (dropdownPlantas == null)
+        {
+            Debug.LogWarning("⚠️ Dropdown no asignado.");
+            return;
+        }
+
         dropdownPlantas.ClearOptions();
 
         List<string> nombres = new List<string>();
-        foreach (var planta in plantas)
+        foreach (var planta in plantas) // ← CAMBIADO
         {
             nombres.Add(planta.nombre);
         }
 
-        if (nombres.Count == 0)
-        {
-            nombres.Add("Sin plantas");
-            dropdownPlantas.interactable = false;
-            btnCargarPlanta.interactable = false;
-        }
-        else
-        {
-            dropdownPlantas.interactable = true;
-            btnCargarPlanta.interactable = true;
-        }
-
         dropdownPlantas.AddOptions(nombres);
+
+        Debug.Log($"✅ Dropdown cargado con {nombres.Count} opciones");
     }
+
 
     void MostrarInputNuevaPlanta()
     {
